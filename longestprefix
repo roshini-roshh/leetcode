@@ -1,0 +1,22 @@
+class Solution:
+    def longestCommonPrefix(self, strs: list[str]) -> str:
+        if not strs:
+            return ""
+        first = strs[0]
+        result = ""
+        for i in range(len(first)):
+            char = first[i]
+            match = True 
+            for word in strs:
+                if i >= len(word) or word[i] != char:
+                    match = False
+                    break
+            if match:
+                result += char
+            else:
+                break        
+        return result
+
+
+sol = Solution()
+print(sol.longestCommonPrefix(["flower", "flow", "flight"])) 
