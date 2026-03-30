@@ -1,0 +1,13 @@
+class Solution:
+    def generateParenthesis(self, n: int):
+        l = []
+        def fun(cs , count ,count1):
+            if len(cs) == 2*n:
+                l.append(cs)
+                return
+            if count < n:
+                fun(cs + "(", count + 1, count1)
+            if count1 < count:
+                fun(cs + ")",count,count1 + 1)
+        fun("", 0, 0)
+        return l
