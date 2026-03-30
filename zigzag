@@ -1,0 +1,17 @@
+class Solution:
+    def convert(self, s, numRows):
+        if numRows == 1 :
+            return s
+        
+        rows = [''] * numRows
+        current_row = 0
+        direction = 1
+        
+        for char in s:
+            rows[current_row] += char
+            current_row += direction
+            
+            if current_row == 0 or current_row == numRows - 1:
+                direction = -direction
+        
+        return ''.join(rows)
