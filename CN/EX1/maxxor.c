@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// maximum xor of two numbers in an array
 typedef struct TrieNode {
     struct TrieNode *child[2];
 } TrieNode;
